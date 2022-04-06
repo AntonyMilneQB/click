@@ -684,7 +684,9 @@ class Context:
 
     def exit(self, code: int = 0) -> "te.NoReturn":
         """Exits the application with a given exit code."""
-        raise Exit(code)
+        if code:
+            raise Exit(code)
+        sys.exit(0)
 
     def get_usage(self) -> str:
         """Helper method to get formatted usage string for the current
