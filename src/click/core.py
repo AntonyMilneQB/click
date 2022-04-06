@@ -686,7 +686,6 @@ class Context:
         """Exits the application with a given exit code."""
         if code:
             raise Exit(code)
-        sys.exit(0)
 
     def get_usage(self) -> str:
         """Helper method to get formatted usage string for the current
